@@ -1,0 +1,27 @@
+<div class="main">
+    <h2 class="titleMain">CONTAS</h2>
+
+    <div class="card" *ngFor="let conta of contas">
+        <img src='{{ conta.img }}' alt="Icons">
+        <h3>{{ conta.title }}</h3>
+        <span>{{ conta.value }} - <b>{{ conta.value + 13 }}</b></span>
+        <p>Até a data atual</p>        
+    </div>
+
+    <h2 class="titleMain">FATURAS</h2>
+
+    <div class="card" id="cardFaturas" *ngFor="let fatura of faturas">
+        <h3>{{ fatura.title }}</h3>
+        <img src='{{fatura.img}}' alt="" class="graph">
+        <span class="quant" *ngIf="fatura.value !== 0">R$ {{ fatura.value }}</span>
+        <p>{{ fatura.sub }}</p>        
+    </div>
+
+    <div class="cardC">
+        <div class="card" id="cardClientes" *ngFor="let cliente of clientes">
+            <h3>{{ cliente.title }}</h3>
+            <span class="quant">{{ cliente.value }}</span>    
+            <span class="cresc"> + {{ cliente.value }}</span>
+        </div>        
+    </div>
+</div>
